@@ -1,5 +1,8 @@
-# What languages are spoken in the 20 poorest (GNP/ capita) countries in the world?
+# The following are SQL Opperations used during the LEARN Academy
+#SQL Day 2
+#This exercise focuses on practicing Join statements in postgresql
 
+# What languages are spoken in the 20 poorest (GNP/ capita) countries in the world?
 SELECT name, gnp
 FROM country
 ORDER BY gnp ASC
@@ -11,7 +14,9 @@ SELECT
 	c.gnp AS GNP,
 	cl.language AS language
 FROM
+	#country table is assigned to the alias 'c' it is then joined to the
 	country c JOIN
+	#countrylanguage table with an alias of 'cl'. The ON joins the two tables via the country code
 	countrylanguage cl ON c.code = cl.countrycode
 ORDER BY
 	gnp ASC
